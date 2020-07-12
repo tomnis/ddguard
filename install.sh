@@ -1,4 +1,5 @@
 #! /bin/bash
+set -e
 
 BINDIR="/usr/local/bin"
 
@@ -15,6 +16,7 @@ cp cnl24driverlib.py $BINDIR
 cp nightscoutlib.py $BINDIR
 
 echo "Installing udev scripts"
+mkdir -pv /etc/udev/rules.d
 cp script/30-contour.rules /etc/udev/rules.d/
 cp script/contour-hotplug.sh $BINDIR
 
